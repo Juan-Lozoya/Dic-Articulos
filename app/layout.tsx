@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { JetBrains_Mono } from "next/font/google";
-import { cn } from "@/lib/utils";
+import type { Metadata } from 'next';
+import './globals.css';
+import { JetBrains_Mono } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
-  title: "Diccard",
-  description: "Sistema para la Gestion de creacion de Libros",
+  title: 'Diccard',
+  description: 'Sistema para la Gestion de creacion de Libros',
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={cn("h-full antialiased", "font-mono", "theme-custom", jetbrainsMono.variable)}
+      className={cn('h-full antialiased', 'font-mono', 'theme-custom', jetbrainsMono.variable)}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
