@@ -1,11 +1,22 @@
+'use client'
+
 import { Scale, FileText, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 export default function AuthLogin(){
+  const [login, setLogin] = useState<string>('autor');
+  const [email, setEmail] = useState<string>('');
   const loginOptionsRol = [
     {key: 'autor', label: 'Autor', icon: FileText},
     {key: 'revisor', label: 'Revisor', icon: BookOpen},
     {key: 'arbitro', label: 'Arbitro', icon: Scale},
   ];
+
+  const handleSubmit = () => {
+    console.log('handle');
+  }
 
   return(
     <>
@@ -19,15 +30,27 @@ export default function AuthLogin(){
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {loginOptionsRol.map((rol) => {
               const Icon = rol.icon;
+              const isActive: boolean = rol.key == login;
 
               return (
-                <button key={rol.key} type="button" className="flex flex-col items-center">
+                <Button key={rol.key} type="button" className="flex flex-col items-center h-15" variant={isActive ? 'default' : 'outline'} onClick={() => setLogin(rol.key)}>
                   <Icon className="w-5 h-5"/>
                   <span>{rol.label}</span>
-                </button>
+                </Button>
               )
             })}
           </div>
+        </div>
+
+        <div className="py-2">
+          <span className="text-gray-600 text-sm">Correo Electronico:</span>
+          <div>
+            <Input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="correo@ejemplo.com"/>
+          </div>
+        </div>
+
+        <div className="py-1">
+         <Button className="w-full" onClick={handleSubmit}>Ingresar</Button>
         </div>
       </div>
     </>

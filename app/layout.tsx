@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={cn("h-full antialiased", "font-mono", jetbrainsMono.variable)}
+      className={cn("h-full antialiased", "font-mono", "theme-custom", jetbrainsMono.variable)}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
