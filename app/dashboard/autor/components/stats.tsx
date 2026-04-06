@@ -2,8 +2,15 @@
 
 import { Badge } from '@/components/ui/badge';
 
+type Stats = {
+  key: string;
+  label: string;
+  number: number;
+  variant: 'default' | 'secondary' | 'outline' | 'destructive';
+};
+
 export default function StatsAutor() {
-  const stats = [
+  const stats: Stats[] = [
     { key: 'pendiente', label: 'Pendiente', number: 0, variant: 'default' },
     { key: 'revision', label: 'En revisión', number: 1, variant: 'secondary' },
     { key: 'aprobado', label: 'Aprobado', number: 1, variant: 'outline' },
