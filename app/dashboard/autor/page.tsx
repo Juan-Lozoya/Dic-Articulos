@@ -1,7 +1,13 @@
+import HeadAutor from './components/head';
+import StatsAutor from './components/stats';
+import TableAutor from './components/table';
+
 export default function AutorPage() {
   return (
     <>
-      <h1>hola Autor</h1>
+      <HeadAutor />
+      <StatsAutor />
+      <TableAutor />
     </>
   );
 }

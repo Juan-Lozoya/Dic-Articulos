@@ -6,9 +6,9 @@ export default function Header() {
   return (
     <>
       <div className="h-15 flex items-center justify-between px-6">
-        <div className="flex items-center">
-          <div className="bg-primary rounded-md p-1 mr-2">
-            <Scale className="text-white w-6 h-6" />
+        <div className="flex items-center space-x-2">
+          <div className="bg-primary rounded-md p-2">
+            <Scale className="text-white w-5 h-5" />
           </div>
           <div className="block">
             <h1 className="text-xl font-semibold">Diccard</h1>
