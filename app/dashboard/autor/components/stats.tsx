@@ -12,10 +12,12 @@ export default function StatsAutor() {
       <div className="mt-5 grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-2">
         {stats.map((stat) => (
           <div key={stat.key} className="shadow-md rounded-md bg-card w-full min-h-20">
-            <div className="w-full flex items-center justify-center pt-2">
-              <Badge variant={stat.variant}>{stat.label}</Badge>
+            <div className="p-2">
+              <div className="w-full flex items-center justify-start">
+                <Badge>{stat.label}</Badge>
+              </div>
+              <div className="w-full ml-3 text-lg">{stat.number}</div>
             </div>
-            <div className="w-full ml-3 text-lg">{stat.number}</div>
           </div>
         ))}
       </div>
