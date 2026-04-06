@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from '@/components/ui/badge';
 
 export default function StatsAutor() {
@@ -14,7 +16,7 @@ export default function StatsAutor() {
           <div key={stat.key} className="shadow-md rounded-md bg-card w-full min-h-20">
             <div className="p-2">
               <div className="w-full flex items-center justify-start">
-                <Badge>{stat.label}</Badge>
+                <Badge variant={stat.variant}>{stat.label}</Badge>
               </div>
               <div className="w-full ml-3 text-lg">{stat.number}</div>
             </div>
