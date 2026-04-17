@@ -11,14 +11,25 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
+type Docs = {
+  title: string;
+  decription: string;
+  date: string;
+  status: string;
+  variant: 'default' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link' | 'tertiary';
+  revisiones: number;
+  link: string;
+};
+
 export default function TableAutor() {
-  const myDocs = [
+  const myDocs: Docs[] = [
     {
       title: 'Análisis de algoritmos cuánticos para optimización combinatoria',
       decription:
         'Este artículo presenta una revisión exhaustiva de los algoritmos cuánticos aplicados a problemas de optimización combinatoria, evaluando su eficiencia frente a métodos clásicos.',
       date: '2026-03-10',
       status: 'En revisión',
+      variant: 'secondary',
       revisiones: 1,
       link: 'https://github.com/Juan-Lozoya/Dic-Articulos',
     },
@@ -28,6 +39,7 @@ export default function TableAutor() {
         'Estudio comparativo sobre la adopción de herramientas de IA en universidades de América Latina y su impacto en los procesos de enseñanza-aprendizaje.',
       date: '2026-02-15',
       status: 'Aprobado',
+      variant: 'outline',
       revisiones: 2,
       link: 'https://github.com/Juan-Lozoya/Dic-Articulos',
     },
@@ -37,6 +49,7 @@ export default function TableAutor() {
         'Desarrollo de una arquitectura de redes neuronales profundas para asistir en el diagnóstico temprano de enfermedades cardiovasculares.',
       date: '2026-03-01',
       status: 'Requiere Cambios',
+      variant: 'tertiary',
       revisiones: 1,
       link: 'https://github.com/Juan-Lozoya/Dic-Articulos',
     },
@@ -72,7 +85,9 @@ export default function TableAutor() {
                   </div>
                 </TableCell>
                 <TableCell className="text-sm text-muted-foreground">{doc.date}</TableCell>
-                <TableCell>Status</TableCell>
+                <TableCell>
+                  <Badge variant={doc.variant}>{doc.status}</Badge>
+                </TableCell>
                 <TableCell>
                   <span className="flex items-center gap-1 text-sm text-muted-foreground">
                     <MessageSquare className="h-3.5 w-3.5" />
